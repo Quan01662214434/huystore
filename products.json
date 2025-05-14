@@ -61,7 +61,7 @@
   },
   {
     "id": 7,
-    "name": "Áo tank top nữ PicklePro",
+    "name": "Áo tank top nữ ",
     "code": "AO001",
     "price": 210000,
     "oldPrice": 290000,
@@ -111,7 +111,7 @@
   },
   {
     "id": 12,
-    "name": "Vớ thể thao PicklePro",
+    "name": "Vớ thể thao dày",
     "code": "VO003",
     "price": 99000,
     "oldPrice": 120000,
@@ -141,7 +141,7 @@
   },
   {
     "id": 15,
-    "name": "Nón thể thao PicklePro",
+    "name": "Nón thể thao ",
     "code": "NON002",
     "price": 189000,
     "oldPrice": 230000,
@@ -171,7 +171,7 @@
   },
   {
     "id": 18,
-    "name": "Túi đựng vợt PicklePro",
+    "name": "Túi đựng vợt PickleBall",
     "code": "PK002",
     "price": 390000,
     "oldPrice": 490000,
