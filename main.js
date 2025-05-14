@@ -1,44 +1,19 @@
 let products = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Load sản phẩm từ products.json
+// Load sản phẩm
 fetch("products.json")
   .then(res => res.json())
   .then(data => {
     products = data;
-    if (document.getElementById("featured-products")) {
-      renderFeatured("featured-products");
-    }
-    if (document.getElementById("bestseller-products")) {
-      renderFeatured("bestseller-products");
-    }
-    if (document.getElementById("categorized-products")) {
-      renderCategorizedProducts();
-    }
-    if (document.getElementById("searchInput")) {
-      setupSearchFilter();
-    }
-    if (window.location.pathname.includes("product-detail.html")) {
-      renderProductDetail();
-    }
-    if (window.location.pathname.includes("cart.html")) {
-      renderCart();
-    }
+    if (document.getElementById("featured-products")) renderFeatured("featured-products");
+    if (document.getElementById("bestseller-products")) renderFeatured("bestseller-products");
+    if (document.getElementById("categorized-products")) renderCategorizedProducts();
+    if (document.getElementById("searchInput")) setupSearchFilter();
+    if (window.location.pathname.includes("product-detail.html")) renderProductDetail();
+    if (window.location.pathname.includes("cart.html")) renderCart();
   });
 
-// Hiển thị danh mục
-function renderCategorizedProducts() {
-  const container = document.getElementById("categorized-products");
-  const categories = [...new Set(products.map(p => p.category))];
-  container.innerHTML = "";
-  categories.forEach(category => {
-    const section = document.createElement("section");
-    section.innerHTML = `<h3>${category}</h3><div class="product-grid">${products.filter(p => p.category === category).map(renderCard).join("")}</div>`;
-    container.appendChild(section);
-  });
-}
-
-// Hiển thị sản phẩm nổi bật / bán chạy
 function renderFeatured(id) {
   const container = document.getElementById(id);
   const list = products.slice(0, 4);
@@ -73,7 +48,17 @@ function addToCart(id) {
   alert("Đã thêm vào giỏ hàng!");
 }
 
-// Tìm kiếm
+function renderCategorizedProducts() {
+  const container = document.getElementById("categorized-products");
+  const categories = [...new Set(products.map(p => p.category))];
+  container.innerHTML = "";
+  categories.forEach(category => {
+    const section = document.createElement("section");
+    section.innerHTML = `<h3>${category}</h3><div class="product-grid">${products.filter(p => p.category === category).map(renderCard).join("")}</div>`;
+    container.appendChild(section);
+  });
+}
+
 function setupSearchFilter() {
   const input = document.getElementById("searchInput");
   input.addEventListener("input", () => {
@@ -87,7 +72,6 @@ function setupSearchFilter() {
   });
 }
 
-// Chi tiết sản phẩm
 function renderProductDetail() {
   const id = parseInt(new URLSearchParams(window.location.search).get("id"));
   const product = products.find(p => p.id === id);
@@ -110,7 +94,6 @@ function renderProductDetail() {
   `;
 }
 
-// Giỏ hàng
 function renderCart() {
   const container = document.querySelector("main");
   let total = 0;
@@ -130,10 +113,13 @@ function renderCart() {
       <td><button onclick="removeItem(${i})">Xóa</button></td>
     </tr>`;
   });
-  html += `</tbody></table><h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>
+  html += `</tbody></table>
+    <h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>
     <h3>Chuyển khoản:</h3>
     <img src="images/qr.jpg" alt="QR" width="200" />
-    <p>Chủ TK: <strong>Nguyễn Đình Tuấn Huy</strong> - MB Bank</p>`;
+    <p>Chủ TK: <strong>Nguyễn Đình Tuấn Huy</strong> - MB Bank</p>
+    <br>
+    <button class="checkout" onclick="alert('Cảm ơn bạn đã đặt hàng! Vui lòng chuyển khoản để hoàn tất.')">Thanh toán ngay</button>`;
   container.innerHTML = html;
 }
 
