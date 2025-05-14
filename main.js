@@ -1,0 +1,1 @@
+// JavaScript điều khiển sản phẩm và chi tiết sản phẩm
