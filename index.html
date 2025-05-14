@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="vi">
 <head>
@@ -6,29 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>HUYSTORE - Trang chủ</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
   <header>
-    <h1>HUYSTORE</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="HUYSTORE Logo" />
+      </a>
+    </div>
     <nav>
-      <a href="index.html">Trang chủ</a>
-      <a href="products.html">Sản phẩm</a>
-      <a href="cart.html">Giỏ hàng</a>
-      <a href="contact.html">Liên hệ</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="products.html">Sản phẩm</a></li>
+        <li><a href="cart.html">Giỏ hàng</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <h2>Thương hiệu nổi bật</h2>
-    <p>Các nhãn hàng uy tín như Selkirk, Franklin, Yonex...</p>
 
-    <h2>Sản phẩm đề xuất</h2>
-    <div class="product-grid">
-      <img src="images/vot1.jpg" alt="Vợt 1"/>
-      <img src="images/ao1.jpg" alt="Áo 1"/>
-      <img src="images/phukien1.jpg" alt="Phụ kiện 1"/>
-      <img src="images/tat1.jpg" alt="Tất 1"/>
-      <img src="images/vot2.jpg" alt="Vợt 2"/>
+  <main>
+    <section class="hero">
+      <h2>Chào mừng đến với <span>HUYSTORE</span></h2>
+      <p>Pickleball chính hãng - Đảm bảo chất lượng - Giao hàng toàn quốc</p>
+      <a href="products.html" class="btn">Xem sản phẩm</a>
+    </section>
+
+    <section class="section-title">
+      <h2>Sản phẩm nổi bật</h2>
+    </section>
+    <div class="product-grid" id="featured-products">
+      <!-- Sản phẩm đề xuất sẽ hiển thị bằng JS -->
+    </div>
+
+    <section class="section-title">
+      <h2>Bán chạy nhất</h2>
+    </section>
+    <div class="product-grid" id="bestseller-products">
+      <!-- Sản phẩm bán chạy sẽ hiển thị bằng JS -->
     </div>
   </main>
+
+  <footer>
+    <p>&copy; 2025 HUYSTORE - Đồ Pickleball chính hãng | Hotline: 0906325133 | Email: huystore@gmail.com</p>
+  </footer>
 </body>
 </html>
