@@ -75,7 +75,9 @@ function renderProductDetail() {
   const id = parseInt(new URLSearchParams(window.location.search).get("id"));
   const product = products.find(p => p.id === id);
   if (!product) return;
+
   document.title = product.name + " - HUYSTORE";
+
   document.getElementById("product-detail").innerHTML = `
     <div class="product-detail-container" style="display:flex;flex-wrap:wrap;gap:30px;">
       <div style="flex:1;min-width:300px;">
@@ -86,8 +88,9 @@ function renderProductDetail() {
         <p><strong>Mã sản phẩm:</strong> ${product.code}</p>
         <p class="old-price">${format(product.oldPrice)}</p>
         <p class="price">${format(product.price)}</p>
-        <p>${product.description}</p>
-        <button onclick="addToCart(${product.id})">Thêm vào giỏ hàng</button>
+        <h4 style="margin-top:20px;">Mô tả chi tiết:</h4>
+        <p style="line-height: 1.6; font-size: 15px;">${product.description}</p>
+        <button onclick="addToCart(${product.id})" style="margin-top:20px;">Thêm vào giỏ hàng</button>
       </div>
     </div>
   `;
@@ -115,7 +118,6 @@ function renderCart() {
   html += `</tbody></table>
     <h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>`;
 
-  // Tạo mã QR VietQR động từ tổng tiền
   const qrURL = `https://img.vietqr.io/image/MB-18122022230205-print.png?amount=${total}&addInfo=HUYSTORE&accountName=Nguyễn%20Đình%20Tuấn%20Huy`;
 
   html += `
