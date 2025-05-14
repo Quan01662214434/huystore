@@ -1,7 +1,6 @@
 let products = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Load sản phẩm
 fetch("products.json")
   .then(res => res.json())
   .then(data => {
@@ -114,12 +113,19 @@ function renderCart() {
     </tr>`;
   });
   html += `</tbody></table>
-    <h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>
+    <h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>`;
+
+  // Tạo mã QR VietQR động từ tổng tiền
+  const qrURL = `https://img.vietqr.io/image/MB-18122022230205-print.png?amount=${total}&addInfo=HUYSTORE&accountName=Nguyễn%20Đình%20Tuấn%20Huy`;
+
+  html += `
     <h3>Chuyển khoản:</h3>
-    <img src="images/qr.jpg" alt="QR" width="200" />
+    <img src="${qrURL}" alt="QR VietQR MB Bank" width="200" />
     <p>Chủ TK: <strong>Nguyễn Đình Tuấn Huy</strong> - MB Bank</p>
+    <p>Số tài khoản: <strong>18122022230205</strong></p>
     <br>
     <button class="checkout" onclick="alert('Cảm ơn bạn đã đặt hàng! Vui lòng chuyển khoản để hoàn tất.')">Thanh toán ngay</button>`;
+
   container.innerHTML = html;
 }
 
