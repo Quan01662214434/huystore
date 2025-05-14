@@ -1,4 +1,5 @@
-/* style.css */
+/* style.css nâng cấp hoàn chỉnh */
+
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -18,7 +19,7 @@ header {
 }
 
 .logo img {
-  height: 40px;
+  height: 50px;
 }
 
 nav ul {
@@ -48,11 +49,23 @@ main {
 
 .hero span {
   color: #00ffff;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: #00aaff;
+  color: white;
+  padding: 10px 20px;
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  border-radius: 5px;
 }
 
 .section-title h2 {
   margin-top: 40px;
   font-size: 24px;
+  text-transform: uppercase;
 }
 
 .product-grid {
@@ -75,6 +88,7 @@ main {
   height: auto;
   max-height: 180px;
   object-fit: contain;
+  cursor: pointer;
 }
 
 .product-card h3 {
@@ -101,6 +115,39 @@ footer {
   margin-top: 40px;
 }
 
+/* Table cart layout */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+button {
+  padding: 4px 10px;
+  margin: 0 2px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+input[type="text"], select {
+  padding: 8px;
+  font-size: 16px;
+  margin: 10px 0;
+}
+
 @media screen and (max-width: 600px) {
   nav ul {
     flex-direction: column;
@@ -109,5 +156,11 @@ footer {
   header {
     flex-direction: column;
     align-items: flex-start;
+  }
+  .product-detail-container {
+    flex-direction: column;
+  }
+  table {
+    font-size: 14px;
   }
 }
