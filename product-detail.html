@@ -15,7 +15,7 @@
       </a>
     </div>
     <nav>
-      <ul>
+      <ul class="nav-menu">
         <li><a href="index.html">Trang chủ</a></li>
         <li><a href="products.html">Sản phẩm</a></li>
         <li><a href="cart.html">Giỏ hàng</a></li>
@@ -25,41 +25,11 @@
   </header>
 
   <main id="product-detail" style="padding: 20px">
-    <!-- Nội dung chi tiết sản phẩm sẽ được render bằng main.js -->
+    <!-- Nội dung chi tiết sản phẩm sẽ được render từ main.js -->
   </main>
 
   <footer>
     <p>&copy; 2025 HUYSTORE - Đồ Pickleball chính hãng</p>
   </footer>
-
-  <script>
-    const params = new URLSearchParams(window.location.search);
-    const productId = parseInt(params.get("id"));
-
-    fetch("products.json")
-      .then(res => res.json())
-      .then(data => {
-        const product = data.find(p => p.id === productId);
-        if (!product) return;
-
-        document.title = product.name + " - HUYSTORE";
-        document.getElementById("product-detail").innerHTML = `
-          <div class="product-detail-container" style="display: flex; gap: 30px; flex-wrap: wrap;">
-            <div style="flex: 1; min-width: 300px;">
-              <img src="${product.image}" alt="${product.name}" style="max-width: 100%; border-radius: 8px;" />
-            </div>
-            <div style="flex: 2; min-width: 300px;">
-              <h1>${product.name}</h1>
-              <p><strong>Mã sản phẩm:</strong> ${product.code || 'SP' + product.id}</p>
-              <p class="old-price">${product.oldPrice ? product.oldPrice.toLocaleString('vi-VN') + '₫' : ''}</p>
-              <p class="price">${product.price.toLocaleString('vi-VN')}₫</p>
-              <p>${product.description}</p>
-              <button onclick="addToCart(${product.id})">Thêm vào giỏ hàng</button>
-            </div>
-          </div>
-        `;
-      });
-  </script>
 </body>
 </html>
-
