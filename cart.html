@@ -5,20 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Giỏ hàng - HUYSTORE</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
   <header>
-    <h1>Giỏ hàng</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="HUYSTORE Logo" />
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="products.html">Sản phẩm</a></li>
+        <li><a href="cart.html">Giỏ hàng</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
+    </nav>
   </header>
-  <main>
-    <p>Chưa có sản phẩm trong giỏ.</p>
-    <p>Tổng thanh toán: <strong>0₫</strong></p>
 
-    <h3>Quét mã QR để thanh toán:</h3>
-    <img src="images/qr.jpg" alt="QR MB Bank - Nguyễn Đình Tuấn Huy" width="200" />
-    <p>Chủ tài khoản: <strong>Nguyễn Đình Tuấn Huy</strong></p>
-    <p>Ngân hàng: <strong>MB Bank</strong></p>
+  <main style="padding: 20px">
+    <!-- Nội dung giỏ hàng sẽ được render bằng main.js -->
   </main>
+
+  <footer>
+    <p>&copy; 2025 HUYSTORE - Đồ Pickleball chính hãng</p>
+  </footer>
 </body>
 </html>
-
