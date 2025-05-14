@@ -5,7 +5,7 @@
     "code": "VOT001",
     "price": 2590000,
     "oldPrice": 3000000,
-    "image": "images/VOT001.jpg",
+    "image": "VOT001.jpg",
     "description": "Vợt pickleball cao cấp từ Selkirk cho hiệu suất thi đấu vượt trội.",
     "category": "Vợt"
   },
@@ -15,7 +15,7 @@
     "code": "VOT002",
     "price": 1390000,
     "oldPrice": 1700000,
-    "image": "images/VOT002.jpg",
+    "image": "VOT002.jpg",
     "description": "Vợt pickleball Franklin dành cho người chơi trung cấp.",
     "category": "Vợt"
   },
@@ -25,7 +25,7 @@
     "code": "VOT003",
     "price": 1990000,
     "oldPrice": 2500000,
-    "image": "images/VOT003.jpg",
+    "image": "VOT003.jpg",
     "description": "Vợt thi đấu chuyên nghiệp do vận động viên Ben Johns lựa chọn.",
     "category": "Vợt"
   },
@@ -35,7 +35,7 @@
     "code": "VOT004",
     "price": 1590000,
     "oldPrice": 1900000,
-    "image": "images/VOT004.jpg",
+    "image": "VOT004.jpg",
     "description": "Vợt Zocker với công nghệ kiểm soát lực đánh tối ưu.",
     "category": "Vợt"
   },
@@ -45,7 +45,7 @@
     "code": "VOT005",
     "price": 1790000,
     "oldPrice": 2100000,
-    "image": "images/VOT005.jpg",
+    "image": "VOT005.jpg",
     "description": "Vợt GAMMA Mirage nhẹ, linh hoạt, phù hợp người mới chơi.",
     "category": "Vợt"
   },
@@ -55,7 +55,7 @@
     "code": "VAY001",
     "price": 320000,
     "oldPrice": 390000,
-    "image": "images/VAY001.jpg",
+    "image": "VAY001.jpg",
     "description": "Váy thể thao nữ chất liệu thấm hút, thoáng khí.",
     "category": "Váy"
   },
@@ -65,7 +65,7 @@
     "code": "AO001",
     "price": 210000,
     "oldPrice": 290000,
-    "image": "images/AO001.jpg",
+    "image": "AO001.jpg",
     "description": "Áo không tay thoáng mát, thích hợp thi đấu mùa hè.",
     "category": "Váy"
   },
@@ -75,7 +75,7 @@
     "code": "AO002",
     "price": 270000,
     "oldPrice": 350000,
-    "image": "images/AO002.jpg",
+    "image": "AO002.jpg",
     "description": "Chất liệu co giãn, thoải mái khi vận động.",
     "category": "Váy"
   },
@@ -95,7 +95,7 @@
     "code": "VO001",
     "price": 80000,
     "oldPrice": 100000,
-    "image": "images/VO001.jpg",
+    "image": "VO001.jpg",
     "description": "Vớ thể thao cổ ngắn mềm mại, thoáng khí.",
     "category": "Vớ"
   },
@@ -105,7 +105,7 @@
     "code": "VO002",
     "price": 99000,
     "oldPrice": 120000,
-    "image": "images/VO002.jpg",
+    "image": "VO002.jpg",
     "description": "Vớ chơi pickleball có lớp đệm và hỗ trợ cổ chân.",
     "category": "Vớ"
   },
@@ -115,7 +115,7 @@
     "code": "VO003",
     "price": 99000,
     "oldPrice": 120000,
-    "image": "images/VO003.jpg",
+    "image": "VO003.jpg",
     "description": "Vớ chơi thể thao giúp khử mùi và thấm hút mồ hôi.",
     "category": "Vớ"
   },
@@ -125,7 +125,7 @@
     "code": "VO004",
     "price": 150000,
     "oldPrice": 180000,
-    "image": "images/VO004.jpg",
+    "image": "VO004.jpg",
     "description": "Combo tiết kiệm 3 đôi vớ thể thao dành cho luyện tập hàng ngày.",
     "category": "Vớ"
   },
@@ -135,7 +135,7 @@
     "code": "NON001",
     "price": 199000,
     "oldPrice": 250000,
-    "image": "images/NON001.jpg",
+    "image": "NON001.jpg",
     "description": "Nón lưỡi trai JOOLA chống nắng, nhẹ, điều chỉnh được size.",
     "category": "Nón"
   },
@@ -145,7 +145,7 @@
     "code": "NON002",
     "price": 189000,
     "oldPrice": 230000,
-    "image": "images/NON002.jpg",
+    "image": "NON002.jpg",
     "description": "Thiết kế đơn giản, phù hợp cả nam và nữ.",
     "category": "Nón"
   },
@@ -155,7 +155,7 @@
     "code": "NON003",
     "price": 179000,
     "oldPrice": 220000,
-    "image": "images/NON003.jpg",
+    "image": "NON003.jpg",
     "description": "Chất vải khô thoáng, logo thêu tinh tế.",
     "category": "Nón"
   },
@@ -165,7 +165,7 @@
     "code": "PK001",
     "price": 99000,
     "oldPrice": 150000,
-    "image": "images/PK001.jpg",
+    "image": "PK001.jpg",
     "description": "Chống trơn trượt khi cầm vợt thi đấu.",
     "category": "Phụ kiện"
   },
@@ -175,7 +175,7 @@
     "code": "PK002",
     "price": 390000,
     "oldPrice": 490000,
-    "image": "images/PK002.jpg",
+    "image": "PK002.jpg",
     "description": "Túi vợt có ngăn riêng và đệm vai êm ái.",
     "category": "Phụ kiện"
   },
@@ -185,7 +185,7 @@
     "code": "PK003",
     "price": 149000,
     "oldPrice": 190000,
-    "image": "images/PK003.jpg",
+    "image": "PK003.jpg",
     "description": "Bóng thi đấu chất lượng cao, độ nảy ổn định.",
     "category": "Phụ kiện"
   },
@@ -195,7 +195,7 @@
     "code": "PK004",
     "price": 69000,
     "oldPrice": 90000,
-    "image": "images/PK004.jpg",
+    "image": "PK004.jpg",
     "description": "Thấm mồ hôi, bảo vệ cổ tay khi chơi thể thao.",
     "category": "Phụ kiện"
   }
