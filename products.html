@@ -5,45 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sản phẩm - HUYSTORE</title>
   <link rel="stylesheet" href="style.css" />
+  <script defer src="main.js"></script>
 </head>
 <body>
   <header>
-    <h1>Sản phẩm</h1>
+    <div class="logo">
+      <a href="index.html">
+        <img src="images/logo.png" alt="HUYSTORE Logo" />
+      </a>
+    </div>
     <nav>
-      <a href="index.html">Trang chủ</a>
-      <a href="products.html">Sản phẩm</a>
+      <ul class="nav-menu">
+        <li><a href="index.html">Trang chủ</a></li>
+        <li><a href="products.html">Sản phẩm</a></li>
+        <li><a href="cart.html">Giỏ hàng</a></li>
+        <li><a href="contact.html">Liên hệ</a></li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <div class="product-grid">
-      <!-- Vợt -->
-      <img src="images/vot1.jpg" alt="Vợt 1">
-      <img src="images/vot2.jpg" alt="Vợt 2">
-      <img src="images/vot3.jpg" alt="Vợt 3">
-      <img src="images/vot4.jpg" alt="Vợt 4">
-      <img src="images/vot5.jpg" alt="Vợt 5">
 
-      <!-- Quần áo -->
-      <img src="images/ao1.jpg" alt="Áo 1">
-      <img src="images/ao2.jpg" alt="Áo 2">
-      <img src="images/ao3.jpg" alt="Áo 3">
-      <img src="images/ao4.jpg" alt="Áo 4">
-      <img src="images/ao5.jpg" alt="Áo 5">
+  <main style="padding: 20px;">
+    <h2>Tìm kiếm sản phẩm</h2>
+    <input type="text" id="searchInput" placeholder="Nhập tên hoặc mã sản phẩm..." style="width: 100%; padding: 10px; font-size: 16px; margin-bottom: 30px;" />
 
-      <!-- Phụ kiện -->
-      <img src="images/phukien1.jpg" alt="Phụ kiện 1">
-      <img src="images/phukien2.jpg" alt="Phụ kiện 2">
-      <img src="images/phukien3.jpg" alt="Phụ kiện 3">
-      <img src="images/phukien4.jpg" alt="Phụ kiện 4">
-      <img src="images/phukien5.jpg" alt="Phụ kiện 5">
-
-      <!-- Tất -->
-      <img src="images/tat1.jpg" alt="Tất 1">
-      <img src="images/tat2.jpg" alt="Tất 2">
-      <img src="images/tat3.jpg" alt="Tất 3">
-      <img src="images/tat4.jpg" alt="Tất 4">
-      <img src="images/tat5.jpg" alt="Tất 5">
+    <div id="categorized-products">
+      <!-- Sản phẩm sẽ được hiển thị theo danh mục bằng main.js -->
     </div>
   </main>
+
+  <footer>
+    <p>&copy; 2025 HUYSTORE - Đồ Pickleball chính hãng</p>
+  </footer>
 </body>
 </html>
