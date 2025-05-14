@@ -1,139 +1,143 @@
-// main.js - phiên bản nâng cấp toàn diện
-
 let products = [];
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Fetch sản phẩm từ products.json
+// Load sản phẩm từ products.json
 fetch("products.json")
-  .then((res) => res.json())
-  .then((data) => {
+  .then(res => res.json())
+  .then(data => {
     products = data;
-    renderAllProducts();
-    setupSearchAndFilter();
+    if (document.getElementById("featured-products")) {
+      renderFeatured("featured-products");
+    }
+    if (document.getElementById("bestseller-products")) {
+      renderFeatured("bestseller-products");
+    }
+    if (document.getElementById("categorized-products")) {
+      renderCategorizedProducts();
+    }
+    if (document.getElementById("searchInput")) {
+      setupSearchFilter();
+    }
+    if (window.location.pathname.includes("product-detail.html")) {
+      renderProductDetail();
+    }
+    if (window.location.pathname.includes("cart.html")) {
+      renderCart();
+    }
   });
 
-function renderAllProducts() {
-  const container = document.getElementById("product-list") || document.getElementById("featured-products") || document.getElementById("bestseller-products");
-  if (!container) return;
+// Hiển thị danh mục
+function renderCategorizedProducts() {
+  const container = document.getElementById("categorized-products");
+  const categories = [...new Set(products.map(p => p.category))];
   container.innerHTML = "";
-  products.forEach((product) => {
-    container.innerHTML += renderProductCard(product);
+  categories.forEach(category => {
+    const section = document.createElement("section");
+    section.innerHTML = `<h3>${category}</h3><div class="product-grid">${products.filter(p => p.category === category).map(renderCard).join("")}</div>`;
+    container.appendChild(section);
   });
 }
 
-function renderProductCard(product) {
+// Hiển thị sản phẩm nổi bật / bán chạy
+function renderFeatured(id) {
+  const container = document.getElementById(id);
+  const list = products.slice(0, 4);
+  container.innerHTML = list.map(renderCard).join("");
+}
+
+function renderCard(p) {
   return `
     <div class="product-card">
-      <img src="${product.image}" alt="${product.name}" onclick="viewProduct(${product.id})">
-      <h3>${product.name}</h3>
-      <p>Mã: <strong>${product.code || "SP" + product.id}</strong></p>
-      <p class="old-price">${formatPrice(product.oldPrice)}</p>
-      <p class="price">${formatPrice(product.price)}</p>
-      <button onclick="addToCart(${product.id})">Thêm vào giỏ</button>
-    </div>
-  `;
+      <img src="${p.image}" alt="${p.name}" onclick="location.href='product-detail.html?id=${p.id}'">
+      <h3>${p.name}</h3>
+      <p>Mã: <strong>${p.code}</strong></p>
+      <p class="old-price">${format(p.oldPrice)}</p>
+      <p class="price">${format(p.price)}</p>
+      <button onclick="addToCart(${p.id})">Thêm vào giỏ</button>
+    </div>`;
 }
 
-function viewProduct(id) {
-  window.location.href = `product-detail.html?id=${id}`;
+function format(v) {
+  return v ? v.toLocaleString("vi-VN") + "₫" : "";
 }
 
-function formatPrice(value) {
-  return typeof value === "number" ? value.toLocaleString("vi-VN") + "₫" : value;
-}
-
-function addToCart(productId) {
-  const item = cart.find(p => p.id === productId);
+function addToCart(id) {
+  const item = cart.find(i => i.id === id);
   if (item) {
     item.quantity++;
   } else {
-    const product = products.find(p => p.id === productId);
+    const product = products.find(p => p.id === id);
     cart.push({ ...product, quantity: 1 });
   }
   localStorage.setItem("cart", JSON.stringify(cart));
   alert("Đã thêm vào giỏ hàng!");
 }
 
-function setupSearchAndFilter() {
-  const searchInput = document.getElementById("searchInput");
-  const categoryFilter = document.getElementById("categoryFilter");
-
-  if (searchInput) {
-    searchInput.addEventListener("input", () => {
-      filterAndRender();
-    });
-  }
-  if (categoryFilter) {
-    categoryFilter.addEventListener("change", () => {
-      filterAndRender();
-    });
-  }
-}
-
-function filterAndRender() {
-  const searchInput = document.getElementById("searchInput").value.toLowerCase();
-  const selectedCategory = document.getElementById("categoryFilter").value;
-  const container = document.getElementById("product-list");
-  container.innerHTML = "";
-  products.filter(p => {
-    const matchesSearch = p.name.toLowerCase().includes(searchInput) || (p.code && p.code.toLowerCase().includes(searchInput));
-    const matchesCategory = selectedCategory === "all" || p.category === selectedCategory;
-    return matchesSearch && matchesCategory;
-  }).forEach(product => {
-    container.innerHTML += renderProductCard(product);
+// Tìm kiếm
+function setupSearchFilter() {
+  const input = document.getElementById("searchInput");
+  input.addEventListener("input", () => {
+    const keyword = input.value.toLowerCase();
+    const filtered = products.filter(p =>
+      p.name.toLowerCase().includes(keyword) ||
+      p.code.toLowerCase().includes(keyword)
+    );
+    const container = document.getElementById("categorized-products");
+    container.innerHTML = "<h3>Kết quả tìm kiếm</h3><div class='product-grid'>" + filtered.map(renderCard).join("") + "</div>";
   });
 }
 
-// Trang cart.html
-if (window.location.pathname.includes("cart.html")) {
-  renderCart();
+// Chi tiết sản phẩm
+function renderProductDetail() {
+  const id = parseInt(new URLSearchParams(window.location.search).get("id"));
+  const product = products.find(p => p.id === id);
+  if (!product) return;
+  document.title = product.name + " - HUYSTORE";
+  document.getElementById("product-detail").innerHTML = `
+    <div class="product-detail-container" style="display:flex;flex-wrap:wrap;gap:30px;">
+      <div style="flex:1;min-width:300px;">
+        <img src="${product.image}" alt="${product.name}" style="max-width:100%;border-radius:8px;" />
+      </div>
+      <div style="flex:2;">
+        <h1>${product.name}</h1>
+        <p><strong>Mã sản phẩm:</strong> ${product.code}</p>
+        <p class="old-price">${format(product.oldPrice)}</p>
+        <p class="price">${format(product.price)}</p>
+        <p>${product.description}</p>
+        <button onclick="addToCart(${product.id})">Thêm vào giỏ hàng</button>
+      </div>
+    </div>
+  `;
 }
 
+// Giỏ hàng
 function renderCart() {
-  const cartContainer = document.querySelector("main");
-  if (!cartContainer) return;
+  const container = document.querySelector("main");
   let total = 0;
-
-  let html = `<table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-    <thead>
-      <tr style="background: #f0f0f0;">
-        <th style="padding: 10px">Sản phẩm</th>
-        <th>Đơn giá</th>
-        <th>Số lượng</th>
-        <th>Thành tiền</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>`;
-
-  cart.forEach((item, index) => {
-    const itemTotal = item.price * item.quantity;
-    total += itemTotal;
-    html += `
-      <tr>
-        <td style="padding: 10px">${item.name}</td>
-        <td>${formatPrice(item.price)}</td>
-        <td>
-          <button onclick="updateQuantity(${index}, -1)">-</button>
-          ${item.quantity}
-          <button onclick="updateQuantity(${index}, 1)">+</button>
-        </td>
-        <td>${formatPrice(itemTotal)}</td>
-        <td><button onclick="removeItem(${index})">Xóa</button></td>
-      </tr>`;
+  let html = `<table><thead><tr><th>Sản phẩm</th><th>Giá</th><th>Số lượng</th><th>Tổng</th><th></th></tr></thead><tbody>`;
+  cart.forEach((item, i) => {
+    const lineTotal = item.price * item.quantity;
+    total += lineTotal;
+    html += `<tr>
+      <td>${item.name}</td>
+      <td>${format(item.price)}</td>
+      <td>
+        <button onclick="updateQty(${i}, -1)">-</button>
+        ${item.quantity}
+        <button onclick="updateQty(${i}, 1)">+</button>
+      </td>
+      <td>${format(lineTotal)}</td>
+      <td><button onclick="removeItem(${i})">Xóa</button></td>
+    </tr>`;
   });
-
-  html += `</tbody></table>
-    <h3>Tổng thanh toán: <span style="color: red">${formatPrice(total)}</span></h3>
-    <h3>Quét mã QR để thanh toán:</h3>
-    <img src="images/qr.jpg" alt="QR MB Bank - Nguyễn Đình Tuấn Huy" width="200" />
-    <p>Chủ tài khoản: <strong>Nguyễn Đình Tuấn Huy</strong></p>
-    <p>Ngân hàng: <strong>MB Bank</strong></p>`;
-
-  cartContainer.innerHTML = html;
+  html += `</tbody></table><h3>Tổng cộng: <span style="color:red">${format(total)}</span></h3>
+    <h3>Chuyển khoản:</h3>
+    <img src="images/qr.jpg" alt="QR" width="200" />
+    <p>Chủ TK: <strong>Nguyễn Đình Tuấn Huy</strong> - MB Bank</p>`;
+  container.innerHTML = html;
 }
 
-function updateQuantity(index, change) {
+function updateQty(index, change) {
   cart[index].quantity += change;
   if (cart[index].quantity < 1) cart[index].quantity = 1;
   localStorage.setItem("cart", JSON.stringify(cart));
