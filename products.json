@@ -1,1 +1,206 @@
-[{"id": 1, "name": "Vợt Pickleball", "price": 2400000, "image": "https://hidosport.vn/wp-content/uploads/2023/07/vot-pickleball-gamicy-chinh-hang.jpg", "description": "Vợt pickleball cao cấp", "category": "Vợt"}]
+[
+  {
+    "id": 1,
+    "name": "Vợt Pickleball Selkirk AMPED",
+    "code": "VOT001",
+    "price": 2590000,
+    "oldPrice": 3000000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vot-pickleball-gamicy-chinh-hang.jpg",
+    "description": "Vợt pickleball cao cấp từ Selkirk cho hiệu suất thi đấu vượt trội.",
+    "category": "Vợt"
+  },
+  {
+    "id": 2,
+    "name": "Vợt Franklin X-40",
+    "code": "VOT002",
+    "price": 1390000,
+    "oldPrice": 1700000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/08/vot-franklin.jpg",
+    "description": "Vợt pickleball Franklin dành cho người chơi trung cấp.",
+    "category": "Vợt"
+  },
+  {
+    "id": 3,
+    "name": "Vợt JOOLA Ben Johns Hyperion",
+    "code": "VOT003",
+    "price": 1990000,
+    "oldPrice": 2500000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/joola-ben-johns.jpg",
+    "description": "Vợt thi đấu chuyên nghiệp do vận động viên Ben Johns lựa chọn.",
+    "category": "Vợt"
+  },
+  {
+    "id": 4,
+    "name": "Vợt Zocker PowerShot",
+    "code": "VOT004",
+    "price": 1590000,
+    "oldPrice": 1900000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/06/vot-zocker.jpg",
+    "description": "Vợt Zocker với công nghệ kiểm soát lực đánh tối ưu.",
+    "category": "Vợt"
+  },
+  {
+    "id": 5,
+    "name": "Vợt GAMMA Mirage",
+    "code": "VOT005",
+    "price": 1790000,
+    "oldPrice": 2100000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/gamma-mirage.jpg",
+    "description": "Vợt GAMMA Mirage nhẹ, linh hoạt, phù hợp người mới chơi.",
+    "category": "Vợt"
+  },
+
+  {
+    "id": 6,
+    "name": "Váy thi đấu nữ màu xanh",
+    "code": "VAY001",
+    "price": 320000,
+    "oldPrice": 390000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vay-the-thao-nu.jpg",
+    "description": "Váy thể thao nữ chất liệu thấm hút, thoáng khí.",
+    "category": "Váy"
+  },
+  {
+    "id": 7,
+    "name": "Áo tank top nữ PicklePro",
+    "code": "AO001",
+    "price": 210000,
+    "oldPrice": 290000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/ao-tanktop-nu.jpg",
+    "description": "Áo không tay thoáng mát, thích hợp thi đấu mùa hè.",
+    "category": "Váy"
+  },
+  {
+    "id": 8,
+    "name": "Áo thi đấu nam cổ tròn",
+    "code": "AO002",
+    "price": 270000,
+    "oldPrice": 350000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/ao-nam-co-tron.jpg",
+    "description": "Chất liệu co giãn, thoải mái khi vận động.",
+    "category": "Váy"
+  },
+  {
+    "id": 9,
+    "name": "Quần thể thao nam",
+    "code": "QUAN001",
+    "price": 270000,
+    "oldPrice": 350000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/quan-the-thao-nam.jpg",
+    "description": "Quần thể thao nhẹ, có túi, phù hợp luyện tập.",
+    "category": "Váy"
+  },
+
+  {
+    "id": 10,
+    "name": "Vớ cổ ngắn JOOLA",
+    "code": "VO001",
+    "price": 80000,
+    "oldPrice": 100000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vo-joola-ngan.jpg",
+    "description": "Vớ thể thao cổ ngắn mềm mại, thoáng khí.",
+    "category": "Vớ"
+  },
+  {
+    "id": 11,
+    "name": "Vớ cổ cao Franklin",
+    "code": "VO002",
+    "price": 99000,
+    "oldPrice": 120000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vo-franklin-cao.jpg",
+    "description": "Vớ chơi pickleball có lớp đệm và hỗ trợ cổ chân.",
+    "category": "Vớ"
+  },
+  {
+    "id": 12,
+    "name": "Vớ thể thao PicklePro",
+    "code": "VO003",
+    "price": 99000,
+    "oldPrice": 120000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vo-picklepro.jpg",
+    "description": "Vớ chơi thể thao giúp khử mùi và thấm hút mồ hôi.",
+    "category": "Vớ"
+  },
+  {
+    "id": 13,
+    "name": "Bộ 3 đôi vớ cổ thấp",
+    "code": "VO004",
+    "price": 150000,
+    "oldPrice": 180000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/vo-3-doi.jpg",
+    "description": "Combo tiết kiệm 3 đôi vớ thể thao dành cho luyện tập hàng ngày.",
+    "category": "Vớ"
+  },
+
+  {
+    "id": 14,
+    "name": "Nón thể thao JOOLA",
+    "code": "NON001",
+    "price": 199000,
+    "oldPrice": 250000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/non-joola.jpg",
+    "description": "Nón lưỡi trai JOOLA chống nắng, nhẹ, điều chỉnh được size.",
+    "category": "Nón"
+  },
+  {
+    "id": 15,
+    "name": "Nón thể thao PicklePro",
+    "code": "NON002",
+    "price": 189000,
+    "oldPrice": 230000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/non-picklepro.jpg",
+    "description": "Thiết kế đơn giản, phù hợp cả nam và nữ.",
+    "category": "Nón"
+  },
+  {
+    "id": 16,
+    "name": "Nón thể thao Franklin đen",
+    "code": "NON003",
+    "price": 179000,
+    "oldPrice": 220000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/non-franklin.jpg",
+    "description": "Chất vải khô thoáng, logo thêu tinh tế.",
+    "category": "Nón"
+  },
+
+  {
+    "id": 17,
+    "name": "Quấn cán vợt JOOLA",
+    "code": "PK001",
+    "price": 99000,
+    "oldPrice": 150000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/quan-can-joola.jpg",
+    "description": "Chống trơn trượt khi cầm vợt thi đấu.",
+    "category": "Phụ kiện"
+  },
+  {
+    "id": 18,
+    "name": "Túi đựng vợt PicklePro",
+    "code": "PK002",
+    "price": 390000,
+    "oldPrice": 490000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/tui-picklepro.jpg",
+    "description": "Túi vợt có ngăn riêng và đệm vai êm ái.",
+    "category": "Phụ kiện"
+  },
+  {
+    "id": 19,
+    "name": "Bóng Pickleball Franklin X-40",
+    "code": "PK003",
+    "price": 149000,
+    "oldPrice": 190000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/ball-franklin.jpg",
+    "description": "Bóng thi đấu chất lượng cao, độ nảy ổn định.",
+    "category": "Phụ kiện"
+  },
+  {
+    "id": 20,
+    "name": "Băng cổ tay thể thao",
+    "code": "PK004",
+    "price": 69000,
+    "oldPrice": 90000,
+    "image": "https://hidosport.vn/wp-content/uploads/2023/07/bang-co-tay.jpg",
+    "description": "Thấm mồ hôi, bảo vệ cổ tay khi chơi thể thao.",
+    "category": "Phụ kiện"
+  }
+]
